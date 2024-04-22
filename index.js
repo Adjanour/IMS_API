@@ -19,6 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 
 //add routes
 app.use("/api/v1",router,productRouter)
-app.all("*",(req,res)=>{
+app.all("*",(_,res)=>{
     res.status(404).json({error:"Route not found"})
 })
