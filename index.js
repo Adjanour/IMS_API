@@ -1,8 +1,16 @@
 import  express from "express"
-import  {connectDB} from "./db.js"
+import  {connectDB} from "./configs/db.js"
 import router from "./routes.js"
 import productRouter from "./routes/productRoutes.js"
-connectDB()
+import productRouter from "./routes/transaction.route.js"
+
+//Instantiate database client
+try {
+    connectDB()
+} catch (error) {
+    console.error(error)
+}
+
 
 const app = express()
 
